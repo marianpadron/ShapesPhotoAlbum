@@ -1,0 +1,83 @@
+CS 5004
+Fall 2023
+Marian Padron
+HW 9 design.txt
+
+This application is meant to work as a “photo-album” that sketches images using shapes and then renders
+them to the user. The model was created first as the ShapesPhotoAlbum class, which creates 2D shape
+objects on a canvas given specific inputs, and saves the shapes and their properties within a Snapshot
+object. These snapshots are then passed on to the controller, which handles commands from the user
+through the program’s view elements. The albums “drawings” are created from a set of instructions
+provided through the command line as a text file. An adapter class parses through the text file and passes
+the instructions to the controller, which then passes the commands to the model and then calls on the view
+to render either an HTML view or SWING based view of the photo album. Users are able to interact with the
+view by either scrolling through the HTML file or toggling and selecting snapshots in the SWING view.
+
+Classes and Interfaces Overview:
+- controller
+	- IPhotoAlbumController: Interface for controller
+
+	- PhotoAlbumController: Controller for program, takes in a sorted list of command line arguments,
+	    and the ShapesPhotoAlbum model. Begin by calling run() method and passing either the ViewFrame
+	    object (graphical) or a String representing the header of the html file (web)
+
+	- PhotoAlbumMain (main): Main entry point for MVC program, initializes controller with args and model,
+	    and depending on args calls controller.run() with graphical call or web call
+
+- model
+	- IShapesPhotoAlbum: Interface for ShapesPhotoAlbum model
+
+    -ShapesPhotoAlbum: Represents a photo album that can create, move, resize, color and delete shapes
+        on a canvas. The photo album is capable of taking a snapshot of itself at a given moment and hold a
+        list of those snapshot objects and well as the shapes currently placed on the canvas.
+
+
+- utilities
+    -shapes
+		-I2DShape (interface): Used to establish a protocol of methods that all 2D shapes should have
+		in order to function with the other classes in the model. The main methods that 2D shapes
+		have include getter methods for their coordinates, their color, their shape name (or unique id),
+		their length and width. Additionally, they have setter methods for their color, length, width, and
+		the ability to move their coordinates on a canvas.
+
+        -Abstract2DShape: Abstract class to reduce code redundancy and repetition. Shapes are also initialized with a CanvasPoint object and RGB color attribute.
+
+        -CanvasPoint: Represents a point with an x and y coordinate on a canvas of a given size with
+        bottom left corner of the canvas is point (0,0).
+
+        - RGB: Represents a color using the RGB color scale.
+
+        - Oval, Rectangle, Triangle: All three classes are children classes of the the Abstract2DShape
+        and represent their own shape.
+
+        - ShapeTypes (enum): Enum for representing different types of shapes, used within several classes to relate
+        shapes to their corresponding methods
+
+    - ArgsReader (class): Parses through list of command line arguments, checks them and returns them
+    in an ordered list, used to pass organized list of args to controller
+
+    - CommandFileReader (class): reads through txt file and organizes commands into a iterable list,
+    used by controller to get shape making commands from file
+
+    - Snapshot: Snapshot objects hold a list of I2DShapes created on a canvas a specific point in time.
+    Snapshots have a unique id, timestamp, description, and list of I2DShape objects with their attributes
+    at the moment the snapshot was created.
+
+- views
+	- IView (interface): Interface for view
+    -graphical
+        -ViewFrame (class): Graphical view for MVC program, child JFrame class that communicates with
+        controller and manages JPanel classes for rendering images
+
+	    - GraphicsPanel (class): JPanel child class used for rendering images, used and controlled by the
+	    ViewFrame class which communicates with controller
+
+	    - HeaderPanel (class): JPanel child class used to providing a header,  used and controlled by
+	    the ViewFrame class which communicates with controller
+
+	    - NavigationPanel (class): JPanel child class responsible for navigation buttons,  used and
+	    controlled by the ViewFrame class which communicates with controller
+
+-web
+	- HtmlView (class): Web view for MVC program, writes out a html file following instructions from
+	the controller

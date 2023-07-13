@@ -1,0 +1,17 @@
+# Make a rectangle and oval. Color red and green
+shape   myoval   oval       500  100 60  30   0 255 1
+shape   myrect   rectangle 200 200 50 100 255 0 0
+
+# Take a snapshot. Optional description text follows snapshot command
+    snapShot After first selfie
+resize myrect   25      100
+    snapShot 2nd selfie
+
+# Change rectangle color to blue. Move the oval
+    color myrect    0  0  255
+move myoval     500   400
+
+# Another snapshot. This time, descriptive text is omitted.
+    snapShot
+            remove myrect
+    snapshot Selfie after removing the rectangle from the picture

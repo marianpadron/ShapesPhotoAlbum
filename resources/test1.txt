@@ -1,0 +1,22 @@
+#random circles
+shape oval1 oval 0 0 30 40 229 204 255
+shape oval2 oval 0 100 20 20 229 204 255
+shape oval3 oval 100 100 30 30 204 255 153
+shape oval4 oval 700 500 31 20 204 255 153
+shape oval5 oval 500 300 15 16 203 215 143
+shape oval6 oval 18 200 204 55 60 255 153
+shape oval7 oval 38 400 20 20 100 255 38
+shape oval8 oval 387 289 7 10 253 176 200
+shape oval9 oval 333 29 20 90 213 76 100
+snapshot snap1
+move oval1 200 18
+move oval4 90 45
+move oval2 10 10
+move oval6 300 300
+snapshot snap2
+shape oval10 oval 100 100 200 200 200 173 30
+snapshot snap3
+
+
+
+

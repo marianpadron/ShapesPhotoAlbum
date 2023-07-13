@@ -1,0 +1,11 @@
+#random triangles
+shape rectangle1 rectangle 100 100 200 100 0 255 128
+snapshot snap1
+shape rect2 rectangle 200 100 20 100 200 188 80
+shape rect3 rectangle 30 100 209 100 201 148 180
+snapshot snap2
+move rectangle1 400 400
+snapshot snap3
+move rect2 5 100
+move rect3 80 189
+snapshot snap4

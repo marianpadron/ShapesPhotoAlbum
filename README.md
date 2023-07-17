@@ -4,7 +4,7 @@ snapshots of said “drawings”, and renders them to user in the form of a scro
 image toggle and selecting functionality.
 
 This project was developed with **MODEL-VIEW-CONTROLLER** design pattern and relies extensively on an 
-**OBJECT ORIENTED DESIGN** to facilitate the implementations of each program component. The program was delivered based on a rubric,
+**OBJECT-ORIENTED DESIGN** to facilitate the implementations of each program component. The program was delivered based on a rubric,
 and all classes and elements of the model were tested extensively using **JUNIT**.
 
 <p align="center">

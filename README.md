@@ -13,3 +13,9 @@ and all classes and elements of the model were tested extensively using **JUNIT*
 
 A more in-depth description of the program's design and implementation can be found in
 [design.txt](/resources/design.txt).
+
+## Contents
+- [outputs](/outputs): Stores HTML renderings written by program
+- [resources(/resources): Txt files with text instructions for controller
+- [src](/src): Main source code
+- [test](/test): Test code

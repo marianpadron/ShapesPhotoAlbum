@@ -8,7 +8,7 @@ This project was developed with **model-view-controller** design pattern and rel
 and all classes and elements of the model were tested extensively using JUnit.
 
 <p align="center">
-<img title="Preview" src="album_preview.png" width="35%">
+<img title="Preview" src="album_preview.png" width="40%">
 </p>
 
 A more in-depth description of the program's design and implementation can be found in

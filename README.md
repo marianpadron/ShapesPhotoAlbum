@@ -16,6 +16,6 @@ A more in-depth description of the program's design and implementation can be fo
 
 ## Contents
 - [outputs](/outputs): Stores HTML renderings written by program
-- [resources(/resources): Txt files with text instructions for controller
+- [resources](/resources): Txt files with text instructions for controller
 - [src](/src): Main source code
 - [test](/test): Test code
